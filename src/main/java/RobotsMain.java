@@ -18,9 +18,9 @@ public class RobotsMain {
         System.out.println("=== ROBOTS MANUFACTURED BY AUTOMECH, HYDROWORKD AND SKYTECH ===");
         printRobots(filteredListByManufactured);
         System.out.println("------------------------------------------");
-        List<ResistanceEvaluable> evaluables = filterResistanceEvaluableRobots(robotsList);
+        List<ResistanceEvaluable> evaluable = filterResistanceEvaluableRobots(robotsList);
         ResistanceReportPrinter printer = new ResistanceReportPrinter();
-        printer.printReport(evaluables);
+        printer.printReport(evaluable);
         System.out.println("------------------------------------------");
     }
 
