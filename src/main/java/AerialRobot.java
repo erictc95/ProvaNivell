@@ -5,6 +5,7 @@ public class AerialRobot extends Robot implements ResistanceEvaluable {
     public AerialRobot (String name, String brand, int yearDate, int maxAltitude, int flightAutonomy) {
         super(name, brand, yearDate);
         this.maxAltitude = maxAltitude;
+        validateFlightAutonomy(flightAutonomy);
         this.flightAutonomy = flightAutonomy;
     }
 
@@ -21,6 +22,7 @@ public class AerialRobot extends Robot implements ResistanceEvaluable {
     }
 
     public void setFlightAutonomy(int flightAutonomy) {
+        validateFlightAutonomy(flightAutonomy);
         this.flightAutonomy = flightAutonomy;
     }
 
