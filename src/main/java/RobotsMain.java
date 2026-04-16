@@ -35,11 +35,19 @@ public class RobotsMain {
     }
 
     private static List<Robot> filterByManufactured(List<Robot> robotsList) {
-        return robotsList.stream().filter(robot -> robot.getBrand().equalsIgnoreCase("AutoMech") || robot.getBrand().equalsIgnoreCase("HydroWorks") || robot.getBrand().equalsIgnoreCase("SkyTech")).collect(Collectors.toList());
+        return robotsList.stream()
+                .filter(robot -> robot.getBrand().equalsIgnoreCase("AutoMech")
+                        || robot.getBrand().equalsIgnoreCase("HydroWorks")
+                        || robot.getBrand().equalsIgnoreCase("SkyTech"))
+                .collect(Collectors.toList());
     }
 
     private static List<GroundRobot> filterByGroundRobotsWithHighSpeed(List<Robot> robotsList) {
-        return robotsList.stream().filter(robot -> robot instanceof GroundRobot).map(robot -> (GroundRobot) robot).filter(robot -> robot.getMaxSpeed() > 30).collect(Collectors.toList());
+        return robotsList.stream()
+                .filter(robot -> robot instanceof GroundRobot)
+                .map(robot -> (GroundRobot) robot)
+                .filter(robot -> robot.getMaxSpeed() > 30)
+                .collect(Collectors.toList());
     }
 
     private static void printRobots(List<? extends Robot> robotsList) {
